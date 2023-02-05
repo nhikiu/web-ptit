@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bai 2</title>
+    <script>
+      function validateForm() {
+        let x = document.forms["formAddTwoNum"]["fnum"].value;
+        let y = document.forms["formAddTwoNum"]["snum"].value;
+
+        if (x == "" || y == "") {
+          alert("First number and second number must be filled out");
+          return false;
+        }
+      }
+      </script>
+  </head>
+
+  <body>
+    <form name="formAddTwoNum" onsubmit="return validateForm()" method="post">
+      <label for="fnum">First number</label><br>
+      <input type="number" id="fnum" name="fnum" value="10"><br>
+      <label for="snum">Second number</label><br>
+      <input type="number" id="snum" name="snum" value="20"><br><br>
+    </form>
+    <button type="button" onclick="document.getElementById('answer').innerHTML = parseFloat(document.getElementById('fnum').value) + parseFloat(document.getElementById('snum').value)" >
+    +</button>
+    <p>Answer: </p>
+    <p id="answer"></p>
+    <p>Click the "+" button to add two numbers.</p>
+
+  </body>
+</html>
